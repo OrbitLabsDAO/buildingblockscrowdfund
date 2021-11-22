@@ -1,9 +1,7 @@
-require('dotenv').config();
-console.log(process.env.SANITYPROJECTID)
+
 /*
 remove the comments when you have wired up the API
-
-
+require('dotenv').config();
 
 //mark down module
 const toMarkdown = require('@sanity/block-content-to-markdown')
@@ -11,10 +9,10 @@ const toMarkdown = require('@sanity/block-content-to-markdown')
 const sanityClient = require('@sanity/client')
 //configure sanity
 const client = sanityClient({
-  projectId: 'process.env.SANITYPROJECTID',
-  dataset: 'process.env.SANITYDATASET',
-  apiVersion: 'process.env.SANITYAPIVERSION', // use current UTC date - see "specifying API version"!
-  token: 'process.env.SANITYTOKEN', // or leave blank for unauthenticated usage
+  projectId: process.env.SANITYPROJECTID,
+  dataset: process.env.SANITYDATASET,
+  apiVersion: process.env.SANITYAPIVERSION, // use current UTC date - see "specifying API version"!
+  token: process.env.SANITYTOKEN', // or leave blank for unauthenticated usage
   useCdn: false, // `false` if you want to ensure fresh data
 })
 

@@ -3,10 +3,10 @@
 add your enviorment files to a .env file in the root
 
 
-SANITYPROJECTID=""
-SANITYDATASET=""
-SANITYAPIVERSION=""
-SANITYTOKEN=""
+SANITYPROJECTID=
+SANITYDATASET=
+SANITYAPIVERSION=
+SANITYTOKEN=
 
 to use them the api.js
 
