@@ -9,7 +9,7 @@ const blocksToHtml = require('@sanity/block-content-to-html')
 const h = blocksToHtml.h
 
 
-//sanitu client
+//sanity client
 const sanityClient = require('@sanity/client')
 //configure sanity
 const client = sanityClient({

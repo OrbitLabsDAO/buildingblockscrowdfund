@@ -1,0 +1,23 @@
+
+
+//remove the comments when you have wired up the API
+require('dotenv').config();
+
+//async function to get the posts
+getPosts = async () => {
+ 
+}
+
+
+module.exports = async () => {
+  //set a posts variale
+  let posts = []
+  //call the get posts fuction
+  if (posts.length === 0) posts =  await getPosts();
+
+
+  return {
+        postsArray: posts
+  }
+
+}
