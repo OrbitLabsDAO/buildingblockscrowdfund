@@ -39,6 +39,13 @@ module.exports = function(eleventyConfig) {
     return minified.code;
   });
 
+  eleventyConfig.addFilter('sanityToHTML', function(value) {
+    return blocksToHtml({
+      blocks: value,
+    })
+  })
+
+
 
   // Add plugins
   eleventyConfig.addPlugin(pluginRss);
