@@ -18,9 +18,12 @@ https://pages.cloudflare.com/
 
 **Usage**
 
+````
 git clone https://github.com/cryptoskillz/sanity_11ty_template.git
 cd sainity_11ty_template
 npm install
+````
+
 Copy across the html file into a folder for HTML (I like it there reference but not required)
 
 **Set up layout**
@@ -29,7 +32,7 @@ In includes dir create file called layout.njk
 Copy the full html across
 
 
-I use http-server as it works better for me that eleventy —serve
+I use http-server (https://www.npmjs.com/package/http-server_ as it works better for me that eleventy —serve but use what you want i am not your boss.
 This is a MVP deploy as things evolve I would use CDN’s, image can, bundlers etc but for this use case I will let cloud flare handle all of that as it does it great.
 
 **CMS**
@@ -38,12 +41,13 @@ This is a MVP deploy as things evolve I would use CDN’s, image can, bundlers e
 
 Remove from eleventy.js
 
-  eleventyConfig.addFilter('sanityToHTML', function(value) {
+````
+eleventyConfig.addFilter('sanityToHTML', function(value) {
     return blocksToHtml({
       blocks: value,
     })
   })
-
+````
 
 Remove api.sanity.js_
 Rename api.strapi.js tos api.js
@@ -57,26 +61,33 @@ Install strapi using this guide (we are going to host on heroku) https://docs.st
 
 ***SANITY***
 
-
+```
 sanity init
 sanity start
+````
 Add a post from http://localhost:3333/
+````
 Close it ctrl -c
+````
 
+````
 Sanity manage 
 	get project id
 	get dataset 
 	create a token
+````
+
 Open api.js in _data directory and remove the comment
 
 Rename _env to .env
 Remove the straps env vars
 
-
 Add the sanity details as above here
 
+````
 Sanity deploy
 Update api 
+````
 
 Remove post detail from .eleventyingore
 
