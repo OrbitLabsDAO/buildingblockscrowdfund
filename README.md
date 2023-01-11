@@ -99,3 +99,7 @@ Add this to sanity
 
 
 We done.
+
+debug stuff
+sudo lsof -i -P | grep LISTEN | grep :6284
+

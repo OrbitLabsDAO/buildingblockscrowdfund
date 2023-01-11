@@ -1,4 +1,213 @@
 ---
 layout: layout.njk
 ---
-put your content here chief.  
+{% set theJS %} 
+    {% include 'index.js' %}
+{% endset %}
+
+  <!--/ Intro Single star /-->
+  <section class="intro-single">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-lg-8">
+          <div class="title-single-box">
+            <h1 class="title-single" id="name"></h1>
+            <span class="color-text-a" id="address"></span>
+          </div>
+        </div>
+        <div class="col-md-12 col-lg-4">
+         
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/ Intro Single End /-->
+  <!--/ Property Single Star /-->
+  <section class="property-single nav-arrow-b">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div id="property-single-carousel" class="owl-carousel owl-arrow gallery-property">
+            
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-md-5 col-lg-4">
+              <div class="property-price d-flex justify-content-center foo">
+                <div class="card-header-c d-flex">
+                  <div class="card-box-ico">
+                    <span class="ion-money" id="currency"></span>
+                  </div>
+                  <div class="card-title-c align-self-center">
+                    <h5 class="title-c" id="price"></h5>
+                  </div>
+                </div>
+              </div>
+              <div class="property-summary">
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="title-box-d section-t4">
+                      <h3 class="title-d">Quick Summary</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="summary-list">
+                  <ul class="list">
+                    <li class="d-flex justify-content-between">
+                      <strong>Property ID:</strong>
+                      <span id="propertyId"></span>
+                    </li>
+                    <li class="d-flex justify-content-between">
+                      <strong>Location:</strong>
+                      <span id="location"></span>
+                    </li>
+                    <li class="d-flex justify-content-between">
+                      <strong>Property Type:</strong>
+                      <span id="type"></span>
+                    </li>
+                    <li class="d-flex justify-content-between">
+                      <strong>Status:</strong>
+                      <span id="status"></span>
+                    </li>
+                    <li class="d-flex justify-content-between">
+                      <strong>Area:</strong>
+                      <span id="area">
+                        <sup>2</sup>
+                      </span>
+                    </li>
+                    <li class="d-flex justify-content-between">
+                      <strong>Beds:</strong>
+                      <span id="beds"></span>
+                    </li>
+                    <li class="d-flex justify-content-between">
+                      <strong>Baths:</strong>
+                      <span id="baths"></span>
+                    </li>
+                    <li class="d-flex justify-content-between">
+                      <strong>Garage:</strong>
+                      <span id="garage"></span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-7 col-lg-7 section-md-t3">
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="title-box-d">
+                    <h3 class="title-d">Property Description</h3>
+                  </div>
+                </div>
+              </div>
+              <div class="property-description">
+                <p class="description color-text-a" id="description">
+                 
+                </p>
+                
+              </div>
+              <div class="row section-t3">
+                <div class="col-sm-12">
+                  <div class="title-box-d">
+                    <h3 class="title-d">Amenities</h3>
+                  </div>
+                </div>
+              </div>
+              <div class="amenities-list color-text-a">
+                <ul class="list-a no-margin" id="amenities">
+                 
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-10 offset-md-1">
+          <ul class="nav nav-pills-a nav-pills mb-3 section-t3" id="pills-tab" role="tablist">
+           
+            <li class="nav-item">
+              <a class="nav-link active" id="pills-map-tab" data-toggle="pill" href="#pills-map" role="tab" aria-controls="pills-map"
+                aria-selected="false">Location</a>
+            </li>
+          </ul>
+          <div class="tab-content" id="pills-tabContent">
+           
+            <div class="tab-pane show active" id="pills-map" role="tabpanel" aria-labelledby="pills-map-tab">
+              <iframe id="googlemap" src=""
+                width="100%" height="460" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12 d-none" id="crowdfund" >
+          <div class="row section-t3">
+            <div class="col-sm-12">
+              <div class="title-box-d">
+                <h3 class="title-d">LET ME IN</h3>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            
+            <div class="col-md-6 col-lg-6">
+              <div class="property-agent">
+                <h4 class="title-agent">So you want to invest</h4>
+                <p class="color-text-a">
+                  Simply enter the amount you would like to invest and you will be taking to the payment portal. 
+                </p>
+                <ul class="list-unstyled">
+                  <li class="d-flex justify-content-between">
+                    <strong>Total Tranches:</strong>
+                    <span class="color-text-a" id="totaltranches"></span>
+                  </li>
+                  <li class="d-flex justify-content-between">
+                    <strong>Amount Sold:</strong>
+                    <span class="color-text-a" id="tranchesold"></span>
+                  </li>
+                  <li class="d-flex justify-content-between">
+                    <strong>Amount left:</strong>
+                    <span class="color-text-a" id="tranchesleft"></span>
+                  </li>
+                  <li class="d-flex justify-content-between">
+                    <strong>Price per Tranche:</strong>
+                    <span class="color-text-a" id="tranchecost">$1000</span>
+                  </li>
+                </ul>
+                
+              </div>
+            </div>
+            <div class="col-md-12 col-lg-6">
+              <div class="property-contact">
+                <form class="form-a">
+                  <div class="row">
+                    <div class="col-md-12 mb-1">
+                      <div class="form-group">
+                        <input type="text" class="form-control form-control-lg form-control-a" id="inputAmount"
+                          placeholder="Tranches" required>
+                      </div>
+                    </div>
+                    <div class="col-md-12 mb-1">
+                      <div class="form-group">
+                        <input type="email" class="form-control form-control-lg form-control-a" id="inputEmail"
+                          placeholder="Email" required>
+                      </div>
+                    </div>
+                    <div class="col-md-12 mb-1">
+                      <div class="form-group">
+                        
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <a href="javascript:submitTranche()"  type="submit" class="btn btn-a">SHUT UP AND TAKE MY MONEY</a>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% if env.environment == 'prod' %}
+    <script type="text/javascript">{{theJS | jsmin | safe}}</script>
+{%  else %}
+    <script type="text/javascript">{{theJS | safe}}</script>
+{% endif %}
+  <!--/ Property Single End /-->
