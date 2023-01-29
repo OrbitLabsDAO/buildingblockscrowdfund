@@ -160,19 +160,19 @@ $(document).ready(function() {
 
     let getProperty = () => {
 
- propertyId = getUrlParamater('id');
-        fetch(apiUrl + `properties/crowdfund/?id=${propertyId}`).then(function (response) {
-    // The API call was successful!
-    return response.json();
-}).then(function (data) {
-    // This is the JSON from our response
-    property = data
-                        //property = JSON.parse(property);
-                        processProperty()
-}).catch(function (err) {
-    // There was an error
-    console.warn('Something went wrong.', err);
-});
+        propertyId = getUrlParamater('id');
+        fetch(apiUrl + `properties/crowdfund/?id=${propertyId}`).then(function(response) {
+            // The API call was successful!
+            return response.json();
+        }).then(function(data) {
+            // This is the JSON from our response
+            property = data
+            //property = JSON.parse(property);
+            processProperty()
+        }).catch(function(err) {
+            // There was an error
+            console.warn('Something went wrong.', err);
+        });
         /*
        
         //process the API call
