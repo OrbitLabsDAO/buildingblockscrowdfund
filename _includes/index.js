@@ -77,8 +77,6 @@ let getUrlParamater = (param) => {
 }
 
 
-
-
 whenDocumentReady(isReady = () => {
 
 

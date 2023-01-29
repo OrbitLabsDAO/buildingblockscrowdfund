@@ -34,7 +34,7 @@
 
 
 
-    /*--/ Navbar Collapse /--*/
+    /*--
     $('.navbar-toggle-box-collapse').on('click', function() {
         $('body').removeClass('box-collapse-closed').addClass('box-collapse-open');
     });
@@ -43,7 +43,7 @@
         $('.menu-list ul').slideUp(700);
     });
 
-    /*--/ Navbar Menu Reduce /--*/
+    /*--
     $(window).trigger('scroll');
     $(window).bind('scroll', function() {
         var pixels = 50;
@@ -61,6 +61,7 @@
             $('.scrolltop-mf').fadeOut(1000, "easeInOutExpo");
         }
     });
+    */
 
 })(jQuery);
 
@@ -158,19 +159,65 @@ $(document).ready(function() {
     }
 
     let getProperty = () => {
-        propertyId = getUrlParamater('id');
+
+ propertyId = getUrlParamater('id');
+        fetch(apiUrl + `properties/crowdfund/?id=${propertyId}`).then(function (response) {
+    // The API call was successful!
+    return response.json();
+}).then(function (data) {
+    // This is the JSON from our response
+    property = data
+                        //property = JSON.parse(property);
+                        processProperty()
+}).catch(function (err) {
+    // There was an error
+    console.warn('Something went wrong.', err);
+});
+        /*
+       
         //process the API call
-        const xhr = new XMLHttpRequest();
-        xhr.open('GET', apiUrl + `properties/crowdfund/?id=${propertyId}`, true);
-        xhr.onload = function() {
-            //check it was ok
-            if (this.status === 200) {
-                property = this.response
-                property = JSON.parse(property);
-                processProperty()
+        
+
+
+        function handler() {
+                            console.log(this.status)
+
+            if (this.readyState == this.DONE) {
+                //check it was ok
+            alert(this.status)
+            alert(this.response)
+                if (this.status === 200) {
+                    property = this.response
+                    alert(property)
+                    property = JSON.parse(property);
+                    console.log(property)
+                    processProperty()
+                }
             }
-        };
+        }
+
+        const xhr = new XMLHttpRequest();
+        //alert(apiUrl + `properties/crowdfund/?id=${propertyId}`)
+        xhr.open('GET', apiUrl + `properties/crowdfund/?id=${propertyId}`);
+        //alert('cc')
         xhr.send();
+        //alert('dd')
+        xhr.onload = handler;
+
+        /*
+
+                xhr.onload = function() {
+                    //check it was ok
+                    alert('sssd')
+                    if (this.status === 200) {
+                        property = this.response
+                        property = JSON.parse(property);
+                        processProperty()
+                    }
+                };
+                */
+        //alert('ee')
+
     }
 
     getProperty();
